@@ -21,12 +21,14 @@ wppconnect
     session: "session1",
     catchQR: (qrCode, asciiQR) => console.log("Scan QR:", asciiQR),
     statusFind: (status) => console.log("Status:", status),
+    browserArgs: ['--no-sandbox', '--disable-setuid-sandbox'], // 🔥 important
   })
   .then((client) => {
     clientInstance = client;
     console.log("✅ WPPConnect is ready!");
   })
   .catch((error) => console.error("WPPConnect Error:", error));
+
 
 // Middleware: API Key Authentication
 const authenticate = (req, res, next) => {
