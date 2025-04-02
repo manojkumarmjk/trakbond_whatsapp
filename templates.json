@@ -1,0 +1,96 @@
+[
+  {
+    "templateId": "trakbond_order_confirmed_gen_v0",
+    "message": "Hi *{{1}}*! 🎧🛒\n\n Congratulations! 🎉 Your order has been confirmed and is under processing. 🙌\n\nOrder Details:\nProduct: *{{2}}*\nQuantity: *{{3}}*\nOrder ID: *{{4}}*\nAmount: *{{5}}*/-\n\nIf you have any questions or need assistance, feel free to reach out to us anytime.\n\nThank you for choosing Trankbond! We appreciate your support. 💙",
+    "messageType": "image",
+    "metadata": {
+      "image": "assets/OrderMgt/gen/ORDER_PLACED/OrdersPlaced/images/Order_Successful.png"
+    }
+  },
+  {
+    "templateId": "trakbond_order_failed_gen_v1",
+    "message": "🚨 *Order Failed*🚨 \n 😢 Uh-oh, *{{1}}*, it looks like your recent order didn’t go through. But don't worry! You can try placing your order again or reach out to our support team for assistance. We're here to help you every step of the way! 💪 \n🌐 https://www.trakbond.com \n \nLet’s get you back on track to enjoying your new Trakbond device! 🚀",
+    "messageType": "image",
+    "metadata": {
+      "image": "assets/OrderMgt/gen/ORDER_FAILED/OrderFailed/images/Order_Failed.png"
+    }
+  },
+  {
+    "templateId": "trakbond_order_processing_gen_v0",
+    "message": "Hi *{{1}}*, good news!\n\nYour order *#{{2}}* is now being processed. 🎉 Our team is carefully preparing your items to ensure everything is perfect. We'll notify you as soon as it's shipped.\n\nThanks for your patience and for choosing Trakbond!\n\nIf you have any questions, feel free to reply to this message or contact our support team. We're here to help!\n\nBest Regards,\nTrakbond",
+    "messageType": "message",
+    "metadata": {}
+  },
+
+  {
+    "templateId": "trakbond_order_shipped_gen_v0",
+    "message": "🚀 Woohoo, *{{1}}*! Your order has shipped and is on its way to you. 🎉 We're just as excited as you are! Track your package in here: \n*{{2}}* 📍\n\n Get ready to experience the best of Trakbond! 🌟",
+    "messageType": "image",
+    "metadata": {
+      "image": "assets/OrderMgt/gen/ORDER_FAILED/OrderFailed/images/Order_Failed.png"
+    }
+  },
+  {
+    "templateId": "trakbond_order_delivered_gen_v0",
+    "message": "📦 Order Delivered! 📦\n\nHi *{{1}}*, great news! Your order has been successfully delivered. 🎉 We hope you’re excited to start using your \nnew Trakbond device. If you have any questions or need assistance, feel free to reach out to us anytime.\n\nEnjoy your purchase and thank you for choosing Trakbond! 🌟",
+    "messageType": "image",
+    "metadata": {
+      "image": "assets/OrderMgt/gen/ORDER_DELIVERED/OrderDelivered/images/order_delivered.jpg"
+    }
+  },
+  {
+    "templateId": "trakbond_cart_abandent_initial_gen_v0",
+    "message": "🚨 Hi *{{1}}*! 🚨 \n\nWe noticed you left some amazing items in your cart at www.trakbond.com! 🛒 Don’t miss out on this special offer just for you. Use coupon code *{{2}}* and get an instant *{{3}}* discount on your next order. 🎉 \n\nThis exclusive deal won't last long! ⏳ Visit our website now and complete your purchase to take advantage of this limited-time offer.\n\nHappy shopping and secure your savings today! 🌟",
+    "messageType": "image",
+    "metadata": {
+      "image": "assets/OrderMgt/gen/CART_ABANDONED/CartAbandentInit/images/CartAbundant.png"
+    }
+  },
+
+
+  {
+    "templateId": "trakbond_welcomemsg_gen_v0",
+    "message": "Greetings from Trakbond! *{{1}}* 🌟\n\n👋 We're thrilled to have you explore Trakbond, where we're dedicated to enhancing the safety and peace of mind for families, pet owners, and caregivers alike. Whether you're safeguarding *kids, special children, pets, or elderly loved ones*, we've got the perfect solution tailored for your needs.\n\n Our trackers come equipped with real-time location sharing, geo-fence alerts, and SOS emergency Alerts, ensuring the safety of your loved ones, whether they're at home, school, or on an adventure.",
+    "messageType": "message",
+    "metadata": {}
+  },
+  {
+    "templateId": "trakbond_price_gen_v0",
+    "message": "*🌟 Special Offer Just for You 🌟*\n\n🚀 *Unbeatable Price Alert!*\n\n*MRP: Rs 7999/-*\n*Regular Price: 5499/-* (*31% Discount!*)\n\n💥 *Now you will get it for Just Rs 4499/-* (*44% Discount!*) Offer valid for *Limited Time*\n\n🎁 *Includes:*\n- *3 Months FREE Subscription* worth Rs 447/-\n- *Unlimited Data Plan with All India Coverage*\n\n🛡️ *Plus:*\n- *1 Year Warranty*\n- *Lifetime Support*\n- *10 days Money Back Guarantee* (*NO QUESTIONS ASKED*)\n- *Quick Customer Support*\n\n🇮🇳 *Proudly Made in India*\n\n🛒 Buy Now & Save!\n\nChoose your preferred shopping experience:\n\n- From our official website: https://www.trakbond.com for the latest offers\n- Or buy on *Amazon* for the same genuine products.\n\n*Secure your peace of mind today with Trakbond, where safety meets convenience at an unbeatable price! 🌈*\n\n",
+    "messageType": "image",
+    "metadata": {
+      "image": "assets/OrderMgt/gen/ORDER_FAILED/OrderFailed/images/Order_Failed.png"
+    }
+  },
+  {
+    "templateId": "trakbond_newlead_faqs_gen_v0",
+    "message": "*FAQs*\n\n*1️⃣ What is the battery back-up of the Trakbond tracker?*\n\n- The tracker offers *flexible battery life*: expect *8-12 hours* on active days and *up to 36 hours* when the device is less active (e.g., kept in a bag).\n\n*2️⃣ Does the Trakbond tracker come with a SIM card?*\n\n- Yes! Each tracker includes a *pre-installed SIM card* that works exclusively with our devices, offering *nationwide coverage in India*.\n- Plus, you get a *3-month FREE subscription* to start!\n\n*3️⃣ How big and heavy is the Trakbond tracker?*\n\n- Our tracker is designed to be *compact and lightweight* for everyday comfort and ease of use.\n- It weighs just *40 grams* and measures *4cm x 4cm*.\n\n*4️⃣ What are the attachment options available for the Trakbond tracker?*\n\n- The tracker is equipped with *multiple attachment options* to suit your needs.\n- It comes with a *carabiner*, an *extensible loop thread*, and a *protective silicone case with a belt loop*, making it easy to wear in various ways (*clipped, hung, or slipped into a pocket*).\n\nMore details: https://www.trakbond.com/faq\n\n",
+    "messageType": "message",
+    "metadata": {}
+  },
+
+  {
+    "templateId": "trakbond_order_shipped_gen_v0",
+    "message": "🚀 Woohoo, *{{1}}*! Your order has shipped and is on its way to you. 🎉 We're just as excited as you are! Track your package in here: \n*{{2}}* 📍\n\n Get ready to experience the best of Trakbond! 🌟",
+    "messageType": "image",
+    "metadata": {
+      "image": "assets/OrderMgt/gen/ORDER_FAILED/OrderFailed/images/Order_Failed.png"
+    }
+  },
+  {
+    "templateId": "trakbond_order_delivered_gen_v0",
+    "message": "📦 Order Delivered! 📦\n\nHi *{{1}}*, great news! Your order has been successfully delivered. 🎉 We hope you’re excited to start using your \nnew Trakbond device. If you have any questions or need assistance, feel free to reach out to us anytime.\n\nEnjoy your purchase and thank you for choosing Trakbond! 🌟",
+    "messageType": "image",
+    "metadata": {
+      "image": "assets/OrderMgt/gen/ORDER_DELIVERED/OrderDelivered/images/order_delivered.jpg"
+    }
+  },
+  {
+    "templateId": "trakbond_cart_abandent_initial_gen_v0",
+    "message": "🚨 Hi *{{1}}*! 🚨 \n\nWe noticed you left some amazing items in your cart at www.trakbond.com! 🛒 Don’t miss out on this special offer just for you. Use coupon code *{{2}}* and get an instant *{{3}}* discount on your next order. 🎉 \n\nThis exclusive deal won't last long! ⏳ Visit our website now and complete your purchase to take advantage of this limited-time offer.\n\nHappy shopping and secure your savings today! 🌟",
+    "messageType": "image",
+    "metadata": {
+      "image": "assets/OrderMgt/gen/CART_ABANDONED/CartAbandentInit/images/CartAbundant.png"
+    }
+  }
+]

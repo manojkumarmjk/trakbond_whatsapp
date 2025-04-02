@@ -1,0 +1,51 @@
+2025/03/31-15:53:46.353 2e03 Reusing MANIFEST /Users/anggupta/code_new/WPPConnect/wp-automation/tokens/session1/Default/Local Storage/leveldb/MANIFEST-000001
+2025/03/31-15:53:46.357 2e03 Recovering log #164
+2025/03/31-15:53:46.358 2e03 Reusing old log /Users/anggupta/code_new/WPPConnect/wp-automation/tokens/session1/Default/Local Storage/leveldb/000164.log 
+2025/03/31-15:54:47.040 2e03 Level-0 table #169: started
+2025/03/31-15:54:47.043 2e03 Level-0 table #169: 12976 bytes OK
+2025/03/31-15:54:47.046 2e03 Delete type=0 #164
+2025/03/31-18:01:47.004 2607 Level-0 table #171: started
+2025/03/31-18:01:47.010 2607 Level-0 table #171: 11461 bytes OK
+2025/03/31-18:01:47.015 2607 Delete type=0 #168
+2025/03/31-20:05:46.969 2607 Level-0 table #173: started
+2025/03/31-20:05:46.977 2607 Level-0 table #173: 11079 bytes OK
+2025/03/31-20:05:46.980 2607 Delete type=0 #170
+2025/03/31-22:44:57.344 2607 Level-0 table #175: started
+2025/03/31-22:44:57.349 2607 Level-0 table #175: 12270 bytes OK
+2025/03/31-22:44:57.351 2607 Delete type=0 #172
+2025/03/31-22:44:57.352 2607 Compacting 4@0 + 1@1 files
+2025/03/31-22:44:57.354 2607 Generated table #176@0: 44 keys, 4536 bytes
+2025/03/31-22:44:57.354 2607 Compacted 4@0 + 1@1 files => 4536 bytes
+2025/03/31-22:44:57.357 2607 compacted to: files[ 0 1 1 0 0 0 0 ]
+2025/03/31-22:44:57.357 2607 Delete type=2 #175
+2025/03/31-22:44:57.357 2607 Delete type=2 #173
+2025/03/31-22:44:57.357 2607 Delete type=2 #166
+2025/03/31-22:44:57.357 2607 Delete type=2 #171
+2025/03/31-22:44:57.357 2607 Delete type=2 #169
+2025/04/01-00:25:57.480 2607 Level-0 table #178: started
+2025/04/01-00:25:57.484 2607 Level-0 table #178: 11470 bytes OK
+2025/04/01-00:25:57.486 2607 Delete type=0 #174
+2025/04/01-04:43:12.658 2607 Level-0 table #180: started
+2025/04/01-04:43:12.662 2607 Level-0 table #180: 14496 bytes OK
+2025/04/01-04:43:12.666 2607 Delete type=0 #177
+2025/04/01-08:33:29.613 2607 Level-0 table #182: started
+2025/04/01-08:33:29.618 2607 Level-0 table #182: 14098 bytes OK
+2025/04/01-08:33:29.620 2607 Delete type=0 #179
+2025/04/01-10:27:03.671 2e03 Level-0 table #184: started
+2025/04/01-10:27:03.675 2e03 Level-0 table #184: 12171 bytes OK
+2025/04/01-10:27:03.677 2e03 Delete type=0 #181
+2025/04/01-10:27:03.678 2e03 Compacting 4@0 + 1@1 files
+2025/04/01-10:27:03.684 2e03 Generated table #185@0: 44 keys, 4985 bytes
+2025/04/01-10:27:03.684 2e03 Compacted 4@0 + 1@1 files => 4985 bytes
+2025/04/01-10:27:03.689 2e03 compacted to: files[ 0 1 1 0 0 0 0 ]
+2025/04/01-10:27:03.689 2e03 Delete type=2 #176
+2025/04/01-10:27:03.689 2e03 Delete type=2 #182
+2025/04/01-10:27:03.689 2e03 Delete type=2 #180
+2025/04/01-10:27:03.689 2e03 Delete type=2 #184
+2025/04/01-10:27:03.689 2e03 Delete type=2 #178
+2025/04/01-12:15:26.512 2607 Level-0 table #187: started
+2025/04/01-12:15:26.516 2607 Level-0 table #187: 11368 bytes OK
+2025/04/01-12:15:26.518 2607 Delete type=0 #183
+2025/04/01-13:53:06.034 2607 Level-0 table #189: started
+2025/04/01-13:53:06.037 2607 Level-0 table #189: 12025 bytes OK
+2025/04/01-13:53:06.040 2607 Delete type=0 #186

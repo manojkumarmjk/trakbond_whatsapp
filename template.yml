@@ -1,0 +1,23 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+
+Resources:
+  WhatsAppLambdaFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: server.handler
+      Runtime: nodejs18.x
+      MemorySize: 1024
+      Timeout: 30
+      Policies: AWSLambdaBasicExecutionRole
+      Events:
+        ApiEvent:
+          Type: Api
+          Properties:
+            Path: /send-message
+            Method: POST
+
+Outputs:
+  ApiGatewayInvokeURL:
+    Description: "API Gateway URL"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Stage/send-message"
