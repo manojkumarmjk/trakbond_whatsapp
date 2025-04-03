@@ -38,8 +38,7 @@ const templates = JSON.parse(fs.readFileSync("templates.json", "utf-8"));
     session: 'sessionName',
     catchQR: (base64Qr, asciiQR) => {
       console.log(asciiQR); // Optional to log the QR in the terminal
-      var matches = base64Qr.match(/^data:([A-Za-z-+\/]+);base64,(.+)$/),
-        response = {};
+      var matches = base64Qr.match(/^data:([A-Za-z-+\/]+);base64,(.+)$/)
 
         if (!matches || matches.length !== 3) {
           return new Error('Invalid input string');
