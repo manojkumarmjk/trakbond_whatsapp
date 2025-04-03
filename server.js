@@ -36,8 +36,12 @@ const templates = JSON.parse(fs.readFileSync("templates.json", "utf-8"));
   wppconnect
   .create({
     session: 'session1',
-    catchQR: (base64Qr, asciiQR) => {
+    catchQR: (base64Qrimg, asciiQR, attempts, urlCode) => {
       console.log(asciiQR); // Optional to log the QR in the terminal
+      console.log('Number of attempts to read the qrcode: ', attempts);
+      console.log('Terminal qrcode: ', asciiQR);
+      console.log('base64 image string qrcode: ', base64Qrimg);
+      console.log('urlCode (data-ref): ', urlCode);
       var matches = base64Qr.match(/^data:([A-Za-z-+\/]+);base64,(.+)$/)
 
         if (!matches || matches.length !== 3) {
@@ -63,7 +67,11 @@ const templates = JSON.parse(fs.readFileSync("templates.json", "utf-8"));
             }
           });
     },
-    statusFind: (status) => console.log("Status:", status),
+    statusFind: (statusSession, session) => {
+      console.log('Status Session: ', statusSession); //return isLogged || notLogged || browserClose || qrReadSuccess || qrReadFail || autocloseCalled || desconnectedMobile || deleteToken
+      //Create session wss return "serverClose" case server for close
+      console.log('Session name: ', session);
+    },
     browserArgs: ['--no-sandbox', '--disable-setuid-sandbox'], // 🔥 important
     logQR: true,
   })
