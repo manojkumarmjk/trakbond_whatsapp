@@ -3,6 +3,7 @@ const cors = require("cors");
 const sharp = require('sharp');
 const bodyParser = require("body-parser");
 const fs = require("fs");
+const path = require('path');
 const serverless = require("serverless-http");
 const wppconnect = require("@wppconnect-team/wppconnect");
 
