@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const sharp = require('sharp');
 const bodyParser = require("body-parser");
 const fs = require("fs");
 const serverless = require("serverless-http");
@@ -9,6 +10,8 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
+app.use(express.static(path.join(__dirname)));
+
 const API_KEY = "b7f9d3a1-5c6e-4d2b-8a9f-23a7fbc982e7"; // Secure API key for authentication
 let clientInstance = null;
 
@@ -16,12 +19,52 @@ let clientInstance = null;
 const templates = JSON.parse(fs.readFileSync("templates.json", "utf-8"));
 
 // Initialize WPPConnect
-wppconnect
+// wppconnect
+//   .create({
+//     session: "session1",
+//     catchQR: (qrCode, asciiQR) => console.log("Scan QR:", asciiQR),
+//     statusFind: (status) => console.log("Status:", status),
+//     browserArgs: ['--no-sandbox', '--disable-setuid-sandbox'], // 🔥 important
+//   })
+//   .then((client) => {
+//     clientInstance = client;
+//     console.log("✅ WPPConnect is ready!");
+//   })
+//   .catch((error) => console.error("WPPConnect Error:", error));
+
+  wppconnect
   .create({
-    session: "session1",
-    catchQR: (qrCode, asciiQR) => console.log("Scan QR:", asciiQR),
-    statusFind: (status) => console.log("Status:", status),
-    browserArgs: ['--no-sandbox', '--disable-setuid-sandbox'], // 🔥 important
+    session: 'sessionName',
+    catchQR: (base64Qr, asciiQR) => {
+      console.log(asciiQR); // Optional to log the QR in the terminal
+      var matches = base64Qr.match(/^data:([A-Za-z-+\/]+);base64,(.+)$/),
+        response = {};
+
+        if (!matches || matches.length !== 3) {
+          return new Error('Invalid input string');
+        }
+      
+        const buffer = Buffer.from(matches[2], 'base64');
+      
+        // Use sharp to add 4px white border
+        sharp(buffer)
+          .extend({
+            top: 4,
+            bottom: 4,
+            left: 4,
+            right: 4,
+            background: { r: 255, g: 255, b: 255, alpha: 1 },
+          })
+          .toFile('out.png', (err, info) => {
+            if (err) {
+              console.error('Error writing file:', err);
+            } else {
+              console.log('QR saved with border as out.png');
+            }
+          });
+    },
+    logQR: true,
+    autoClose: 120000,
   })
   .then((client) => {
     clientInstance = client;
@@ -122,6 +165,6 @@ app.post("/send-message", authenticate, async (req, res) => {
 module.exports.handler = serverless(app);
 
 // Start Server
-app.listen(9000, () => {
+app.listen(9004, () => {
   console.log("🚀 Server running at http://localhost:9000");
 });
