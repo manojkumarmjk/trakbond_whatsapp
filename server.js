@@ -67,7 +67,7 @@ const templates = JSON.parse(fs.readFileSync("templates.json", "utf-8"));
     statusFind: (status) => console.log("Status:", status),
     browserArgs: ['--no-sandbox', '--disable-setuid-sandbox'], // 🔥 important
     logQR: true,
-    autoClose: 120000,
+    autoClose: 60000,
   })
   .then((client) => {
     clientInstance = client;
