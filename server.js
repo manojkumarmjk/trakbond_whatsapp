@@ -165,6 +165,6 @@ app.post("/send-message", authenticate, async (req, res) => {
 module.exports.handler = serverless(app);
 
 // Start Server
-app.listen(9004, () => {
+app.listen(9000, () => {
   console.log("🚀 Server running at http://localhost:9000");
 });
