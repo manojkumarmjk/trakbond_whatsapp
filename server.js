@@ -95,6 +95,8 @@ app.post("/send-message", authenticate, async (req, res) => {
   if (!clientInstance)
     return res.status(500).json({ error: "WPPConnect not initialized" });
 
+  console.log("API called Send Message - req.body : ", req.body);
+
   const { campaignName, destination, templateParams } = req.body;
 
   // Find template by ID
@@ -104,6 +106,8 @@ app.post("/send-message", authenticate, async (req, res) => {
   // Replace placeholders in message
   let formattedMessage = template.message;
   if (!templateParams || templateParams.length > 0) {
+    console.log("Template Params: ", templateParams);
+    console.log("Template Message: ", template.message);
     formattedMessage = template.message;
   } else {
     templateParams.forEach((param, index) => {
@@ -151,6 +155,9 @@ app.post("/send-message", authenticate, async (req, res) => {
       default:
         return res.status(400).json({ error: "Unsupported messageType" });
     }
+
+    // Log the response
+    console.log("Response from WPPConnect:", response);
 
     res.json({ success: true, response });
   } catch (error) {
