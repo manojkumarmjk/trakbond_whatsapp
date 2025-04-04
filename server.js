@@ -105,7 +105,7 @@ app.post("/send-message", authenticate, async (req, res) => {
 
   // Replace placeholders in message
   let formattedMessage = template.message;
-  if (!templateParams || templateParams.length > 0) {
+  if (!templateParams || templateParams.length < 0) {
     console.log("Template Params: ", templateParams);
     console.log("Template Message: ", template.message);
     formattedMessage = template.message;
