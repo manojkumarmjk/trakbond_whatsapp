@@ -1,9 +1,9 @@
 const express = require("express");
 const cors = require("cors");
-const sharp = require('sharp');
+const sharp = require("sharp");
 const bodyParser = require("body-parser");
 const fs = require("fs");
-const path = require('path');
+const path = require("path");
 const serverless = require("serverless-http");
 const wppconnect = require("@wppconnect-team/wppconnect");
 
@@ -33,46 +33,46 @@ const templates = JSON.parse(fs.readFileSync("templates.json", "utf-8"));
 //   })
 //   .catch((error) => console.error("WPPConnect Error:", error));
 
-  wppconnect
+wppconnect
   .create({
-    session: 'session1',
+    session: "session1",
     catchQR: (base64Qrimg, asciiQR, attempts, urlCode) => {
       console.log(asciiQR); // Optional to log the QR in the terminal
-      console.log('Number of attempts to read the qrcode: ', attempts);
-      console.log('Terminal qrcode: ', asciiQR);
-      console.log('base64 image string qrcode: ', base64Qrimg);
-      console.log('urlCode (data-ref): ', urlCode);
-      var matches = base64Qr.match(/^data:([A-Za-z-+\/]+);base64,(.+)$/)
+      console.log("Number of attempts to read the qrcode: ", attempts);
+      console.log("Terminal qrcode: ", asciiQR);
+      console.log("base64 image string qrcode: ", base64Qrimg);
+      console.log("urlCode (data-ref): ", urlCode);
+      var matches = base64Qr.match(/^data:([A-Za-z-+\/]+);base64,(.+)$/);
 
-        if (!matches || matches.length !== 3) {
-          return new Error('Invalid input string');
-        }
-      
-        const buffer = Buffer.from(matches[2], 'base64');
-      
-        // Use sharp to add 4px white border
-        sharp(buffer)
-          .extend({
-            top: 4,
-            bottom: 4,
-            left: 4,
-            right: 4,
-            background: { r: 255, g: 255, b: 255, alpha: 1 },
-          })
-          .toFile('out.png', (err, info) => {
-            if (err) {
-              console.error('Error writing file:', err);
-            } else {
-              console.log('QR saved with border as out.png');
-            }
-          });
+      if (!matches || matches.length !== 3) {
+        return new Error("Invalid input string");
+      }
+
+      const buffer = Buffer.from(matches[2], "base64");
+
+      // Use sharp to add 4px white border
+      sharp(buffer)
+        .extend({
+          top: 4,
+          bottom: 4,
+          left: 4,
+          right: 4,
+          background: { r: 255, g: 255, b: 255, alpha: 1 },
+        })
+        .toFile("out.png", (err, info) => {
+          if (err) {
+            console.error("Error writing file:", err);
+          } else {
+            console.log("QR saved with border as out.png");
+          }
+        });
     },
     statusFind: (statusSession, session) => {
-      console.log('Status Session: ', statusSession); //return isLogged || notLogged || browserClose || qrReadSuccess || qrReadFail || autocloseCalled || desconnectedMobile || deleteToken
+      console.log("Status Session: ", statusSession); //return isLogged || notLogged || browserClose || qrReadSuccess || qrReadFail || autocloseCalled || desconnectedMobile || deleteToken
       //Create session wss return "serverClose" case server for close
-      console.log('Session name: ', session);
+      console.log("Session name: ", session);
     },
-    browserArgs: ['--no-sandbox', '--disable-setuid-sandbox'], // 🔥 important
+    browserArgs: ["--no-sandbox", "--disable-setuid-sandbox"], // 🔥 important
     logQR: true,
   })
   .then((client) => {
@@ -80,7 +80,6 @@ const templates = JSON.parse(fs.readFileSync("templates.json", "utf-8"));
     console.log("✅ WPPConnect is ready!");
   })
   .catch((error) => console.error("WPPConnect Error:", error));
-
 
 // Middleware: API Key Authentication
 const authenticate = (req, res, next) => {
@@ -93,26 +92,34 @@ const authenticate = (req, res, next) => {
 
 // API: Send Message Based on Template /*authenticate*/
 app.post("/send-message", authenticate, async (req, res) => {
-  if (!clientInstance) return res.status(500).json({ error: "WPPConnect not initialized" });
+  if (!clientInstance)
+    return res.status(500).json({ error: "WPPConnect not initialized" });
 
   const { campaignName, destination, templateParams } = req.body;
 
   // Find template by ID
-  const template = templates.find(t => t.templateId === campaignName);
+  const template = templates.find((t) => t.templateId === campaignName);
   if (!template) return res.status(400).json({ error: "Invalid templateId" });
 
   // Replace placeholders in message
   let formattedMessage = template.message;
-  templateParams.forEach((param, index) => {
-    formattedMessage = formattedMessage.replace(`{{${index + 1}}}`, param);
-  });
+  if (!templateParams || templateParams.length > 0) {
+    formattedMessage = template.message;
+  } else {
+    templateParams.forEach((param, index) => {
+      formattedMessage = formattedMessage.replace(`{{${index + 1}}}`, param);
+    });
+  }
 
   try {
     let response;
 
     switch (template.messageType) {
       case "message":
-        response = await clientInstance.sendText(`${destination}@c.us`, formattedMessage);
+        response = await clientInstance.sendText(
+          `${destination}@c.us`,
+          formattedMessage
+        );
         break;
 
       case "image":
