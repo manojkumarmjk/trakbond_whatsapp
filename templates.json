@@ -27,7 +27,7 @@
     "message": "🚀 Woohoo, *{{1}}*! Your order has shipped and is on its way to you. 🎉 We're just as excited as you are! Track your package in here: \n*{{2}}* 📍\n\n Get ready to experience the best of Trakbond! 🌟",
     "messageType": "image",
     "metadata": {
-      "image": "assets/OrderMgt/gen/ORDER_FAILED/OrderFailed/images/Order_Failed.png"
+      "image": "assets/OrderMgt/gen/ORDER_SHIPPED/OrderShipped/images/OrderShipped.png"
     }
   },
   {
